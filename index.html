@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">TRS</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Purchase</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        
+        <div class="slider">
+          <button class="arrow left-arrow">&lt;</button>
+          <div class="slides">
+            <div class="slide active">
+                <h1>Latest News And Updates</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>   
+            </div>
+            <div class="slide">
+              <h1>This is slide 2</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+            <div class="slide"><h1>This is slide 3</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+          </div>
+          <button class="arrow right-arrow">&gt;</button>
+          <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="middle">
+        <div class="image"></div>
+        <div class="text">
+          <h2>Hero Title Example</h2>
+         <p>Hero Sub-Title Description</p>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+         <button>Read More</button>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sponsor">
+            <h2>Sponsor Example</h2>
+           <p>Sponsor Description</p>
+    <div class="sponsorparent">
+        <div class="sponsor-image"></div>
+        <div class="sponsor-image"></div>
+        <div class="sponsor-image"></div>
+        <div class="sponsor-image"></div>
+        <div class="sponsor-image"></div>
+        </div>
+    </section>
+
+    <footer class="footer"> 
+        <div class="contact">
+            <h3>Contact Us</h3>
+            <p>Send us a message</p>
+            <form class="form1">
+                <input class type="text" placeholder="Full Name"><br><br>
+                <input type="email" placeholder="Your Email"><br><br>
+                <textarea placeholder="Your Message"></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="sitemap">
+            <h3>Sitemap</h3>
+            <p>All our pages</p>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="flogo">
+            <div class="logo">TRS</div>
+            <p><span>&#9742;</span> 0518465184</p>
+            <p><span>&#9993;</span> xyz123@gmail.com</p>
+        </div>
+        
+    </footer>
+    <div class="copy">
+        <p>Copyright 2021 ALl Rights Reserved Company Name</p>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+      
+        function showSlide(index) {
+          const slides = document.querySelectorAll('.slide');
+          const dots = document.querySelectorAll('.dot');
+      
+          // Loop through slides and dots to reset their active state
+          slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            dots[i].classList.remove('active');
+          });
+      
+          // Set the new active slide and dot
+          slides[index].classList.add('active');
+          dots[index].classList.add('active');
+        }
+      
+        function nextSlide() {
+          const slides = document.querySelectorAll('.slide');
+          currentSlide = (currentSlide + 1) % slides.length; // Loop back to the first slide
+          showSlide(currentSlide);
+        }
+      
+        // Auto-transition every 3 seconds
+        setInterval(nextSlide, 3000);
+      
+        // Add click events for dots (optional)
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+          });
+        });
+      </script>
+         
+</body>
+</html>
